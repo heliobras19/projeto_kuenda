@@ -12,6 +12,122 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-person"></i>
+              <span>Clientes</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link {{Route::is('candidato.anexo.documento') == 1 ? '' : 'collapsed' }}" data-bs-target="#anexos-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-card-list"></i><span>Concurso/Seletivo</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="anexos-nav" class="nav-content  {{Route::is('candidato.anexo.documento') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('candidato.anexo.documento') }}">
+                        <i class="bi bi-circle"></i><span>Novo </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Todos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Em Andamento</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Encerrados</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-people"></i>
+              <span>Candidatos</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link {{Route::is('candidato.anexo.documento') == 1 ? '' : 'collapsed' }}" data-bs-target="#anexos-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-person-badge"></i><span>Usuários</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="anexos-nav" class="nav-content  {{Route::is('candidato.anexo.documento') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('candidato.anexo.documento') }}">
+                        <i class="bi bi-circle"></i><span>Novo </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-file-earmark-check"></i>
+              <span>Banca</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-cash"></i>
+              <span>Boletos</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-cash-stack"></i>
+              <span>Financeiro</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-file-earmark-check"></i>
+              <span>Tipo de Recurso</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-file-earmark-check"></i>
+              <span>Tipo de Título</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-gear"></i>
+              <span>Configuração</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-file-earmark-check"></i>
+              <span>Aviso Inicial</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="users-profile.html">
+              <i class="bi bi-file-earmark-check"></i>
+              <span>Manual</span>
+            </a>
+          </li>
+
+        {{-- <li class="nav-item">
             <a class="nav-link {{Route::is('candidato.anexo.documento') == 1 ? '' : 'collapsed' }}" data-bs-target="#anexos-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-card-list"></i><span>Anexos</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
@@ -84,7 +200,7 @@
               <i class="bi bi-folder-check"></i>
               <span>Editais/Publicações</span>
             </a>
-          </li>
+          </li>--}}
 
         {{-- <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CandidatoController;
+use App\Http\Controllers\ConcursoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,15 @@ Route::get('/concursos', function () {
     return view('concursos');
 });
 
+
+Route::controller(ConcursoController::class)->prefix('concurso')->group(function () {
+    Route::get('/', 'index')->name('concurso'); // Exibe o formulário de login.
+    Route::get('/novo', 'novo')->name('concurso.novo'); // Processa o login.
+    Route::get('/andamento', 'andamento')->name('concurso.andamento'); //->middleware('check.concurso'); // Exibe a página inicial do concurso.
+    Route::get('/todos', 'todos')->name('concurso.todos');//->middleware('check.concurso'); // Exibe a página inicial do concurso.
+    Route::get('/editar', 'editar')->name('concurso.editar');//->middleware('check.concurso');
+    Route::get('/encerrados', 'encerrados')->name('concurso.encerrados');//->middleware('check.concurso');
+});
 
 Route::controller(CandidatoController::class)->prefix('candidato')->group(function () {
     Route::get('/', 'login')->name('candidato'); // Exibe o formulário de login.
