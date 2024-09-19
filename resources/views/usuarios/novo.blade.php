@@ -212,29 +212,6 @@
                                 </select>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Permite Anexo de Documentos </label>
-                                <select name="situation" type="text" class="form-select" id="situation">
-                                    <option value="">NÃO</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Data Final do Anexo</label>
-                                <input type="date" name="" id="" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Hora Final do Anexo</label>
-                                <input type="time" name="" id="" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Permite Anexo de Documentos PCD </label>
-                                <select name="situation" type="text" class="form-select" id="situation">
-                                    <option value="">NÃO</option>
-                                </select>
-                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Salvar</button>
                                 <button type="submit" class="btn btn-primary">Cancelar</button>

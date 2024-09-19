@@ -19,7 +19,7 @@ class CandidatoController extends Controller
 
     public function index(Request $request)
     {
-        return view('candidato.home');
+        return view('candidato.listagem');
     }
 
     public function edit(Request $request)

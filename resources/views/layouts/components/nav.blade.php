@@ -12,7 +12,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('cliente') }}">
               <i class="bi bi-person"></i>
               <span>Clientes</span>
             </a>
@@ -24,22 +24,22 @@
             </a>
             <ul id="anexos-nav" class="nav-content  {{Route::is('candidato.anexo.documento') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('candidato.anexo.documento') }}">
+                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('concurso.novo') }}">
                         <i class="bi bi-circle"></i><span>Novo </span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('concurso.todos') }}">
                         <i class="bi bi-circle"></i><span>Todos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('concurso.andamento') }}">
                         <i class="bi bi-circle"></i><span>Em Andamento</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('concurso.encerrados') }}">
                         <i class="bi bi-circle"></i><span>Encerrados</span>
                     </a>
                 </li>
@@ -47,7 +47,7 @@
         </li><!-- End Components Nav -->
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('candidato') }}">
               <i class="bi bi-people"></i>
               <span>Candidatos</span>
             </a>
@@ -59,12 +59,12 @@
             </a>
             <ul id="anexos-nav" class="nav-content  {{Route::is('candidato.anexo.documento') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('candidato.anexo.documento') }}">
+                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('usuario.novo') }}">
                         <i class="bi bi-circle"></i><span>Novo </span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('usuario') }}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -72,14 +72,14 @@
         </li><!-- End Components Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('banca') }}">
               <i class="bi bi-file-earmark-check"></i>
               <span>Banca</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('boleto') }}">
               <i class="bi bi-cash"></i>
               <span>Boletos</span>
             </a>
@@ -93,14 +93,14 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('tipo_recurso') }}">
               <i class="bi bi-file-earmark-check"></i>
               <span>Tipo de Recurso</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('tipo_titulo') }}">
               <i class="bi bi-file-earmark-check"></i>
               <span>Tipo de Título</span>
             </a>
