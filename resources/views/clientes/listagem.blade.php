@@ -56,21 +56,15 @@
                             </tr>
                         </thead>		
                         <tbody>
-                            <tr>
-                                <th scope="row">97</th>
-                                <td>AUT. MUN. DE SEG., TRÂN. E TRANS. DE SÃO BENTO DO UNA - UNATTRAN</td>
-                                <td>SÃO BENTO DO UNA-PE</td>
-                                <td>(81)3735-1770</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">107</th>
-                                <td>CONSÓRCIO DE INTEGRAÇÃO DOS MUNÍCIPIOS DO PAJEÚ - CIMPAJEÚ</td>
-                                <td>AFOGADOS DA INGAZEIRA-PE</td>
-                                <td>(87)9810-07743</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
-                            </tr>
-                            
+                            @foreach ($clientes as $key => $item)
+                                <tr>
+                                    <th scope="row">{{$key}}</th>
+                                    <td>{{$item->nome}}</td>
+                                    <td>{{$item->cidade}}</td>
+                                    <td>{{$item->telefone}}</td>
+                                    <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
+                                </tr>
+                            @endforeach       
                         </tbody>
                     </table>
                     <!-- End Table with hoverable rows -->

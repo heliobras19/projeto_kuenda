@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use Exception;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class ClienteController extends Controller
 {
     /**
@@ -12,7 +13,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return view('clientes.listagem');
+        $clientes = Cliente::all();
+        return view('clientes.listagem', ['clientes' => $clientes]);
     }
 
     public function novo()
@@ -31,9 +33,37 @@ class ClienteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+     public function store(Request $request)
+    { 
+        try {
+            $validated = $request->validate([
+            'nome' => 'required',
+            'estado' => 'required',
+            'cidade' => 'required',
+            'endereco' => 'required',
+            'cep' => 'nullable',
+            'telefone' => 'nullable',
+            'fax' => 'nullable',
+            'email' => 'required|email|unique:clientes',
+            'site' => 'nullable',
+            'logo' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validação do logo
+        ]);
+        $validated['codigo'] = Str::uuid();
+        // Upload do logo, se existir
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            $validated['logo'] = $logoPath;
+        }
+
+        // Criar novo cliente
+        Cliente::create($validated);
+
+        return redirect()->route('cliente');
+        } catch (Exception $th) {
+            dd($th->getMessage());
+        }
+        // Validação dos dados
+     
     }
 
     /**
@@ -57,7 +87,31 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        // Validação dos dados
+        $validated = $request->validate([
+            'codigo' => 'required|unique:clientes,codigo,' . $cliente->id,
+            'nome' => 'required',
+            'estado' => 'required',
+            'cidade' => 'required',
+            'endereco' => 'required',
+            'cep' => 'nullable',
+            'telefone' => 'nullable',
+            'fax' => 'nullable',
+            'email' => 'required|email|unique:clientes,email,' . $cliente->id,
+            'site' => 'nullable',
+            'logo' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Upload do logo, se existir
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            $validated['logo'] = $logoPath;
+        }
+
+        // Atualizar cliente
+        $cliente->update($validated);
+
+        return redirect()->back()->with('success', 'Cliente atualizado com sucesso!');
     }
 
     /**

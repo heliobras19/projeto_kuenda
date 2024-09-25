@@ -42,11 +42,13 @@ Route::get('/concursos', function () {
 Route::controller(ClienteController::class)->prefix('cliente')->group(function () {
     Route::get('/', 'index')->name('cliente'); // Exibe o formulário de login.
     Route::get('/novo', 'novo')->name('cliente.novo'); // Processa o login.
+    Route::post('/novo_save', 'store')->name('clientes.store');
 });
 
 Route::controller(ConcursoController::class)->prefix('concurso')->group(function () {
     Route::get('/', 'index')->name('concurso'); // Exibe o formulário de login.
     Route::get('/novo', 'novo')->name('concurso.novo'); // Processa o login.
+    Route::post('/novo_save', 'store')->name('concurso.store'); // Processa o login.
     Route::get('/andamento', 'andamento')->name('concurso.andamento'); //->middleware('check.concurso'); // Exibe a página inicial do concurso.
     Route::get('/todos', 'todos')->name('concurso.todos');//->middleware('check.concurso'); // Exibe a página inicial do concurso.
     Route::get('/editar', 'editar')->name('concurso.editar');//->middleware('check.concurso');
