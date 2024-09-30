@@ -1,11 +1,17 @@
 @extends('layouts.admin')
 @section('title', 'Home')
 @section('content')
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <div class="pagetitle">
-        <h1>Clientes</h1>
+        <h1>Tipo de Recursos</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ '/home' }}">Clientes</a></li>
+                <li class="breadcrumb-item"><a href="{{ '/home' }}">Tipo de Recursos</a></li>
                 <li class="breadcrumb-item active">Listagem @if (session('status'))
                         {{ session('status') }}
                     @endif
@@ -32,7 +38,7 @@
                                 <input type="button" class="form-control" value="PDF">
                             </div>
                             <div class="me-2 flex-grow-1">
-                                <a type="button" href="{{ route('cliente.novo') }}" class="form-control btn btn-danger">Cadastrar Novo</a>
+                                <a type="button"  class="form-control btn btn-danger" data-toggle="modal" data-target="#myModal">Cadastrar Novo</a>
                             </div>
 
                         </div>
@@ -44,6 +50,34 @@
                         </div>
                     </div>
 
+                    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Tipo de Recurso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="input1">Código:</label>
+                    <input type="text" class="form-control" id="input1" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="input2">Tipo de Recurso</label>
+                    <input type="text" class="form-control" id="input2">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
                     <!-- Table with hoverable rows -->
                     <table class="table table-hover">
                         <thead>
@@ -59,7 +93,7 @@
                             <tr>
                                 <th scope="row">32</th>
                                 <td>RESULTADO PRELIMINAR DOS CARGOS SEM SEGUNDA FASE.</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
+                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger" data-toggle="modal" data-target="#myModal"></td>
                             </tr>
          
                             

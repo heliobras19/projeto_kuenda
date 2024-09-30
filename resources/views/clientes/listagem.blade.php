@@ -61,14 +61,14 @@
                                 <td>AUT. MUN. DE SEG., TRÂN. E TRANS. DE SÃO BENTO DO UNA - UNATTRAN</td>
                                 <td>SÃO BENTO DO UNA-PE</td>
                                 <td>(81)3735-1770</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
+                                <td><a type="button" name="" id="" class="form-control btn-danger" href="{{ route('cliente.novo') }}">Visualizar</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">107</th>
                                 <td>CONSÓRCIO DE INTEGRAÇÃO DOS MUNÍCIPIOS DO PAJEÚ - CIMPAJEÚ</td>
                                 <td>AFOGADOS DA INGAZEIRA-PE</td>
                                 <td>(87)9810-07743</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
+                                <td><a type="button" name="" id="" class="form-control btn-danger" href="{{ route('cliente.novo') }}">Visualizar</a></td>
                             </tr>
                             
                         </tbody>

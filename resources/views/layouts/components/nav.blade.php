@@ -54,12 +54,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link {{Route::is('candidato.anexo.documento') == 1 ? '' : 'collapsed' }}" data-bs-target="#anexos-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link {{Route::is('usuario') == 1 ? '' : 'collapsed' }}" data-bs-target="#usuarios-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-person-badge"></i><span>Usuários</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="anexos-nav" class="nav-content  {{Route::is('candidato.anexo.documento') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
+            <ul id="usuarios-nav" class="nav-content  {{Route::is('usuario') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a class="{{Route::is('candidato.anexo.documento') == 1 ? 'active' : '' }}" href="{{ route('usuario.novo') }}">
+                    <a class="{{Route::is('usuario') == 1 ? 'active' : '' }}" href="{{ route('usuario.novo') }}">
                         <i class="bi bi-circle"></i><span>Novo </span>
                     </a>
                 </li>
@@ -86,7 +86,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link collapsed" href="{{ route('financeiro') }}">
               <i class="bi bi-cash-stack"></i>
               <span>Financeiro</span>
             </a>

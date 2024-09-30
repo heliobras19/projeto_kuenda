@@ -12,7 +12,7 @@ class FinanceiroController extends Controller
      */
     public function index()
     {
-        //
+        return view('financeiro.listagem');
     }
 
     /**

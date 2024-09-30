@@ -22,7 +22,7 @@ class UsuarioController extends Controller
 
     public function novo()
     {
-        return view('usuarios.listagem');
+        return view('usuarios.novo');
     }
 
     /**

@@ -9,11 +9,21 @@
         <div class="row">
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title">Gestão dos Boletos Gerados através da plataforma do ASAAS</h5>
+
                     <div class="my-4 d-flex justify-content-between align-items-center">
                         <div class="d-flex flex-wrap">
                            
                             <div class="me-2 flex-grow-1">
-                                <imput type="text" class="form-control btn btn-danger" value="10" />
+                                <div class="d-flex align-items-baseline">
+                                    <label class="me-2" for="">Mostrar </label>
+                                    <select class="form-select me-2" aria-label="Mostrar registros">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                    <label for="">registos </label>
+                                </div>
                             </div>
 
                         </div>
@@ -26,25 +36,41 @@
                     </div>
 
                     <!-- Table with hoverable rows -->
-                    <table class="table table-hover">
+                    <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Código</th>
-                                <th scope="col">CPF(Login)</th>
-                                <th scope="col">Usuário</th>
+                                <th scope="col">Data da Geração</th>
+                                <th scope="col">Data de Vencimento</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Data do Pagamento</th>
                                 <th scope="col">Situação</th>
-                                <th scope="col">E-mail</th>
+                                <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>	
+                        
+
+
+ 
+ 
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>014.987.860-57</td>
-                                <td>magno holz</td>
-                                <td>ATIVO</td>
-                                <td>magno@mhinformatica.inf.br</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
+                                <td>07/07/2024</td>
+                                <td>15/08/2024</td>
+                                <td>500,00</td>
+                                <td>01/09/2024</td>
+                                <td>Recebida</td>
+                                <td><input type="button" value="Boleto" name="" id="" class="form-control btn-danger"></td>
+                                <td><input type="button" value="Recibo" name="" id="" class="form-control btn-danger"></td>
+                            </tr>
+                            <tr>
+                                <td>07/07/2024</td>
+                                <td>15/08/2024</td>
+                                <td>500,00</td>
+                                <td>01/09/2024</td>
+                                <td>Recebida</td>
+                                <td><input type="button" value="Boleto" name="" id="" class="form-control btn-danger"></td>
+                                <td><input type="button" value="Recibo" name="" id="" class="form-control btn-danger"></td>
                             </tr>
                             
                             

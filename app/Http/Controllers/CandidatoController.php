@@ -17,6 +17,11 @@ class CandidatoController extends Controller
     // }
 
 
+    public function home(Request $request)
+    {
+        return view('candidato.home');
+    }
+
     public function index(Request $request)
     {
         return view('candidato.listagem');

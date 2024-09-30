@@ -32,7 +32,7 @@
                                 <input type="button" class="form-control" value="PDF">
                             </div>
                             <div class="me-2 flex-grow-1">
-                                <a type="button" href="{{ route('cliente.novo') }}" class="form-control btn btn-danger">Cadastrar novo Profissional</a>
+                                <a type="button" href="{{ route('banca.novo') }}" class="form-control btn btn-danger">Cadastrar novo Profissional</a>
                             </div>
 
                         </div>
@@ -63,7 +63,7 @@
                                 <td>magno holz</td>
                                 <td>ATIVO</td>
                                 <td>magno@mhinformatica.inf.br</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
+                                <td><input type="button" value="Visualizar" href="{{ route('banca.novo') }}" name="" id="" class="form-control btn-danger"></td>
                             </tr>
                             
                             

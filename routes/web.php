@@ -5,6 +5,7 @@ use App\Http\Controllers\BoletosController;
 use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ConcursoController;
+use App\Http\Controllers\FinanceiroController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TipoRecursoController;
 use App\Http\Controllers\TipoTituloController;
@@ -39,6 +40,10 @@ Route::get('/concursos', function () {
     return view('concursos');
 });
 
+Route::get('/dashboard', function () {
+    return view('candidato.home');
+});
+
 Route::controller(ClienteController::class)->prefix('cliente')->group(function () {
     Route::get('/', 'index')->name('cliente'); // Exibe o formulário de login.
     Route::get('/novo', 'novo')->name('cliente.novo'); // Processa o login.
@@ -70,6 +75,10 @@ Route::controller(BancaController::class)->prefix('banca')->group(function () {
 Route::controller(BoletosController::class)->prefix('boleto')->group(function () {
     Route::get('/', 'index')->name('boleto'); 
     Route::get('/novo', 'novo')->name('boleto.novo'); 
+});
+
+Route::controller(FinanceiroController::class)->prefix('financeiro')->group(function () {
+    Route::get('/', 'index')->name('financeiro'); 
 });
 
 Route::controller(TipoRecursoController::class)->prefix('tipo_recurso')->group(function () {

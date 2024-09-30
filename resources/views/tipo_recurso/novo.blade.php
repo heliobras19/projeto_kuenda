@@ -3,10 +3,10 @@
 @section('content')
 
     <div class="pagetitle">
-        <h1>Concurso</h1>
+        <h1>Tipo de Recurso</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">Novo Concurso</li>
+                <li class="breadcrumb-item">Novo</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
