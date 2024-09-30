@@ -23,58 +23,58 @@
                             <div class="mb-3">
                                 <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="#">Concurso</a>
+                                  <a class="nav-link active" aria-current="page" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Concurso</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Locais, Data de Avaliação</a>
+                                  <a class="nav-link" href="{{ route('concurso.avaliacao',['id' => 'Kuenda']) }}">Locais, Data de Avaliação</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Publicações</a>
+                                  <a class="nav-link" href="{{ route('concurso.publicacao',['id' => 'Kuenda']) }}">Publicações</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Boletos</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.boletos',['id' => 'Kuenda']) }}">Boletos</a>                              
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Cargos</a>
+                                  <a class="nav-link" href="{{ route('concurso.cargos',['id' => 'Kuenda']) }}">Cargos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Cadastro de Recursos</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.recursos',['id' => 'Kuenda']) }}">Cadastro de Recursos</a>                              
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Retornos</a>
+                                  <a class="nav-link" href="{{ route('concurso.retornos',['id' => 'Kuenda']) }}">Retornos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Inscrição/D. Pessoais</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.inscricao',['id' => 'Kuenda']) }}">Inscrição/D. Pessoais</a>                              
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Correção</a>
+                                  <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Correção</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Recursos</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Recursos</a>                              
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Perguntas adicionais</a>
+                                  <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Perguntas adicionais</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Afrodescendente</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.afrodescendencia',['id' => 'Kuenda']) }}">Afrodescendente</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">PCD</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.pcd',['id' => 'Kuenda']) }}">PCD</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Necessidade Prova</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Necessidade Prova</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Indígena</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Indígena</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Cota adicional</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Cota adicional</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Pedidos de isenção</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Pedidos de isenção</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Relatórios</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Relatórios</a>                              
                                 </li>
                               </ul>
                             </div>
