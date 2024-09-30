@@ -36,6 +36,79 @@ class ConcursoController extends Controller
         return view('concurso.novo', compact('clientes'));
     }
 
+    public function consultar()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.concurso',  compact('clientes'));
+    }
+
+    public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }
+
+    public function publicacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.publicacao',  compact('clientes'));
+    }
+
+    public function boletos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.boletos',  compact('clientes'));
+    }
+
+
+    public function cargos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.cargos',  compact('clientes'));
+    }
+
+    public function recursos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.recursos',  compact('clientes'));
+    }
+
+    /*public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }
+
+    public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }
+
+    public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }
+
+    public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }
+
+    public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }
+
+    public function avaliacao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.avaliacao',  compact('clientes'));
+    }*/
+
     public function encerrados()
     {
         $concursos = Concurso::with('Cliente')->where('status', 'Encerrado')->get();

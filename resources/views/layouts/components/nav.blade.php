@@ -79,11 +79,27 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('boleto') }}">
-              <i class="bi bi-cash"></i>
-              <span>Boletos</span>
+            <a class="nav-link {{Route::is('boleto') == 1 ? '' : 'collapsed' }}" data-bs-target="#boletos-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-card-list"></i><span>Boleto</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
+            <ul id="boletos-nav" class="nav-content  {{Route::is('boleto') ? '' : 'collapsed collapse' }}" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a class="{{Route::is('boleto') == 1 ? 'active' : '' }}" href="{{ route('boleto.novo') }}">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('boleto.retornos') }}">
+                        <i class="bi bi-circle"></i><span>Retornos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('boleto.localizar') }}">
+                        <i class="bi bi-circle"></i><span>Localizar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
 
           <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('financeiro') }}">

@@ -58,6 +58,12 @@ Route::controller(ConcursoController::class)->prefix('concurso')->group(function
     Route::get('/todos', 'todos')->name('concurso.todos');//->middleware('check.concurso'); // Exibe a página inicial do concurso.
     Route::get('/editar', 'editar')->name('concurso.editar');//->middleware('check.concurso');
     Route::get('/encerrados', 'encerrados')->name('concurso.encerrados');//->middleware('check.concurso');
+
+    Route::get('/{id}/visualizar', 'consultar')->name('concurso.consultar');
+    Route::get('/{id}/avaliacao', 'avaliacao')->name('concurso.avaliacao');
+    Route::get('/{id}/publicacao', 'publicacao')->name('concurso.publicacao');
+    Route::get('/{id}/boletos', 'boletos')->name('concurso.boletos');
+    Route::get('/{id}/cargos', 'cargos')->name('concurso.cargos');
 });
 
 Route::controller(CandidatoController::class)->prefix('candidato')->group(function () {
@@ -77,6 +83,8 @@ Route::controller(BancaController::class)->prefix('banca')->group(function () {
 Route::controller(BoletosController::class)->prefix('boleto')->group(function () {
     Route::get('/', 'index')->name('boleto'); 
     Route::get('/novo', 'novo')->name('boleto.novo'); 
+    Route::get('/retornos', 'retorno')->name('boleto.retornos'); 
+    Route::get('/localizar', 'localizar')->name('boleto.localizar'); 
 });
 
 Route::controller(FinanceiroController::class)->prefix('financeiro')->group(function () {

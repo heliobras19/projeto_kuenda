@@ -12,12 +12,22 @@ class BoletosController extends Controller
      */
     public function index()
     {
-        return view('boletos.listagem');
+        return view('boletos.novo');
     }
 
     public function novo()
     {
         return view('boletos.novo');
+    }
+
+    public function retorno()
+    {
+        return view('boletos.retornos');
+    }
+
+    public function localizar()
+    {
+        return view('boletos.localizar');
     }
 
     /**
