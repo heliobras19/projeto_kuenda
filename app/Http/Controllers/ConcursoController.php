@@ -73,37 +73,37 @@ class ConcursoController extends Controller
         return view('concurso.menus.recursos',  compact('clientes'));
     }
 
+    public function retornos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.retornos',  compact('clientes'));
+    }
+
+    public function inscricao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.inscricao',  compact('clientes'));
+    }
+
+    public function correcao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.correcao',  compact('clientes'));
+    }
+
+    public function afrodescendencia()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.afrodescendente',  compact('clientes'));
+    }
+
+    public function pcd()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.pcd',  compact('clientes'));
+    }
+
     /*public function avaliacao()
-    {
-        $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
-    }
-
-    public function avaliacao()
-    {
-        $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
-    }
-
-    public function avaliacao()
-    {
-        $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
-    }
-
-    public function avaliacao()
-    {
-        $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
-    }
-
-    public function avaliacao()
-    {
-        $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
-    }
-
-    public function avaliacao()
     {
         $clientes = Cliente::all();
         return view('concurso.menus.avaliacao',  compact('clientes'));

@@ -64,6 +64,11 @@ Route::controller(ConcursoController::class)->prefix('concurso')->group(function
     Route::get('/{id}/publicacao', 'publicacao')->name('concurso.publicacao');
     Route::get('/{id}/boletos', 'boletos')->name('concurso.boletos');
     Route::get('/{id}/cargos', 'cargos')->name('concurso.cargos');
+    Route::get('/{id}/recursos', 'recursos')->name('concurso.recursos');
+    Route::get('/{id}/retornos', 'retornos')->name('concurso.retornos');
+    Route::get('/{id}/inscricao', 'inscricao')->name('concurso.inscricao');
+    Route::get('/{id}/afrodescendencia', 'afrodescendencia')->name('concurso.afrodescendencia');
+    Route::get('/{id}/pcd', 'pcd')->name('concurso.pcd');
 });
 
 Route::controller(CandidatoController::class)->prefix('candidato')->group(function () {

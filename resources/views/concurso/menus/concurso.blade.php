@@ -23,16 +23,58 @@
                             <div class="mb-3">
                                 <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                  <a class="nav-link active" aria-current="page" href="#">Concurso</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Link</a>
+                                  <a class="nav-link" href="#">Locais, Data de Avaliação</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Link</a>
+                                  <a class="nav-link" href="#">Publicações</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                    <a class="nav-link" href="#">Boletos</a>                              
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Cargos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Cadastro de Recursos</a>                              
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Retornos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Inscrição/D. Pessoais</a>                              
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Correção</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Recursos</a>                              
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Perguntas adicionais</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Afrodescendente</a>                              
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">PCD</a>                              
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Necessidade Prova</a>                              
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Indígena</a>                              
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Cota adicional</a>                              
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pedidos de isenção</a>                              
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Relatórios</a>                              
                                 </li>
                               </ul>
                             </div>
