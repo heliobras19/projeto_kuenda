@@ -35,26 +35,18 @@
                             </tr>
                         </thead>	
                         <tbody>
+                        @foreach ($concursos as $item)
                             <tr>
-                                <th scope="row">115</th>
-                                <td>ATIVO</td>
-                                <td>CONSÓRCIO DE INTEGRAÇÃO DOS MUNÍCIPIOS DO PAJEÚ - CIMPAJEÚ</td>
-                                <td>PROCESSO SELETIVO</td>
-                                <td>001/2023</td>
-                                <td>01/11/2023 - 08/02/2024</td>
+                                <th>{{$item->id}}</th>
+                                <td>{{$item->status}}</td>
+                                <td>{{$item->cliente->nome}}</td>
+                                <td>{{$item->modalidade}}</td>
+                                <td>{{$item->edital_numero}}</td>
+                                <td>{{$item->data_inicio}} - {{$item->data_fim}}</td>
                                 <td><input type="button" value="Visualizar" name="" id="" class="form-control btn btn-danger"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">115</th>
-                                <td>ATIVO</td>
-                                <td>CONSÓRCIO DE INTEGRAÇÃO DOS MUNÍCIPIOS DO PAJEÚ - CIMPAJEÚ</td>
-                                <td>PROCESSO SELETIVO</td>
-                                <td>001/2023</td>
-                                <td>01/11/2023 - 08/02/2024</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn btn-danger"></td>
-                            </tr>
                             
-                            
+                            </tr>
+                        @endforeach 
                         </tbody>
                     </table>
                     <!-- End Table with hoverable rows -->

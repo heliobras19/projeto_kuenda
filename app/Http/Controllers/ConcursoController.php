@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Concurso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ConcursoController extends Controller
 {
@@ -12,27 +14,32 @@ class ConcursoController extends Controller
      */
     public function index()
     {
-        return view('concurso.todos');
+        $concursos = Concurso::with('Cliente')->get();
+        return view('concurso.todos', compact('concursos'));
     }
 
     public function todos()
     {
-        return view('concurso.todos');
+        $concursos = Concurso::with('Cliente')->get();
+        return view('concurso.todos', compact('concursos'));
     }
 
     public function andamento()
     {
-        return view('concurso.andamento');
+        $concursos = Concurso::with('Cliente')->where('status', 'Aberto')->get();
+         return view('concurso.todos', compact('concursos'));
     }
 
     public function novo()
     {
-        return view('concurso.novo');
+        $clientes = Cliente::all();
+        return view('concurso.novo', compact('clientes'));
     }
 
     public function encerrados()
     {
-        return view('concurso.encerrados');
+        $concursos = Concurso::with('Cliente')->where('status', 'Encerrado')->get();
+         return view('concurso.todos', compact('concursos'));
     }
 
     /**
@@ -48,7 +55,52 @@ class ConcursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return $request->all();
+       try {
+        $validatedData = $request->validate([
+            'entidade' => 'required|string|max:255',
+            'municipio' => 'required|string|max:255',
+            'estado' => 'required|string|max:255',
+            'descricao' => 'required|string',
+            'edital_numero' => 'required|string|max:255',
+            'modalidade' => 'required|string|max:255',
+            'status' => 'required|string|max:255',
+            'situacao' => 'required|string|max:255',
+            'descricao_inicial' => 'required|string',
+            'descricao_publicacoes' => 'required|string',
+            'tipo_inscricao' => 'required|string|max:255',
+            'codigo_certame' => 'required|string|max:255',
+            'data_inicio' => 'required|date',
+            'hora_inicio' => 'required',
+            'data_fim' => 'required|date',
+            'hora_fim' => 'required',
+            'data_pror' => 'nullable|date',
+            'hora_pror' => 'nullable',
+            'numero_inscricoes' => 'required|string|max:255',
+            'numero_inscricoes_turno' => 'required|string|max:255',
+            'data_limite_estatuto_idoso' => 'nullable|date',
+            'vagas_negros_pardos' => 'required|boolean',
+            'informar_dependentes' => 'required|boolean',
+            'quantidade_tipo_prova' => 'required|integer',
+            'data_final_isencao' => 'nullable|date',
+            'hora_final_isencao' => 'nullable',
+            'numero_isencoes' => 'required|integer',
+            'permite_anexo_documentos' => 'required|boolean',
+            'data_final_anexo' => 'nullable|date',
+            'hora_final_anexo' => 'nullable',
+            'permite_anexo_documentos_pcd' => 'required|boolean',
+        ]);
+        
+        $validatedData['codigo_concurso'] = Str::uuid();
+        //return $validatedData;
+        Concurso::create($validatedData);
+
+        return redirect()->route('concurso')->with('success', 'Concurso criado com sucesso!');
+    
+       } catch (\Throwable $th) {
+        dd($th->getMessage());
+       } 
+    
     }
 
     /**
