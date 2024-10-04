@@ -69,7 +69,7 @@
                                     <a class="nav-link" href="{{ route('concurso.pedidos_isencao',['id' => $id]) }}">Pedidos de isenção</a>                              
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('concurso.cadastro_relatorios',['id' => $id]) }}">Relatórios</a>                              
+                                    <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Relatórios</a>                              
                                 </li>
                               </ul>
                             </div>
