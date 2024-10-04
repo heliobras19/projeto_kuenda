@@ -73,6 +73,12 @@ class ConcursoController extends Controller
         return view('concurso.menus.recursos',  compact('clientes'));
     }
 
+    public function cadastro_recursos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.cadastro_recursos',  compact('clientes'));
+    }
+
     public function retornos()
     {
         $clientes = Cliente::all();
@@ -103,11 +109,59 @@ class ConcursoController extends Controller
         return view('concurso.menus.pcd',  compact('clientes'));
     }
 
-    /*public function avaliacao()
+    public function cota_adicional()
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
-    }*/
+        return view('concurso.menus.cota_adicional',  compact('clientes'));
+    }
+
+    public function ensalamento()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.ensalamento',  compact('clientes'));
+    }
+
+    public function material_grafica()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.material_grafica',  compact('clientes'));
+    }
+
+    public function pedidos_isencao()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.pedidos_isencao',  compact('clientes'));
+    }
+
+    public function relatorios_novos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.relatorios_novos',  compact('clientes'));
+    }
+
+    public function relatorios()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.relatorios',  compact('clientes'));
+    }
+
+    public function indigenas()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.indigenas',  compact('clientes'));
+    }
+
+    public function titulos()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.titulos',  compact('clientes'));
+    }
+
+    public function usuarios()
+    {
+        $clientes = Cliente::all();
+        return view('concurso.menus.usuarios',  compact('clientes'));
+    }
 
     public function encerrados()
     {

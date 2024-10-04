@@ -64,11 +64,23 @@ Route::controller(ConcursoController::class)->prefix('concurso')->group(function
     Route::get('/{id}/publicacao', 'publicacao')->name('concurso.publicacao');
     Route::get('/{id}/boletos', 'boletos')->name('concurso.boletos');
     Route::get('/{id}/cargos', 'cargos')->name('concurso.cargos');
+    Route::get('/{id}/cadastro_recursos', 'cadastro_recursos')->name('concurso.cadastro_recursos');
     Route::get('/{id}/recursos', 'recursos')->name('concurso.recursos');
     Route::get('/{id}/retornos', 'retornos')->name('concurso.retornos');
     Route::get('/{id}/inscricao', 'inscricao')->name('concurso.inscricao');
     Route::get('/{id}/afrodescendencia', 'afrodescendencia')->name('concurso.afrodescendencia');
     Route::get('/{id}/pcd', 'pcd')->name('concurso.pcd');
+    Route::get('/{id}/cota_adicional', 'cota_adicional')->name('concurso.cota_adicional');
+    Route::get('/{id}/ensalamento', 'ensalamento')->name('concurso.ensalamento');
+    Route::get('/{id}/material_grafica', 'material_grafica')->name('concurso.material_grafica');
+    Route::get('/{id}/pedidos_isencao', 'pedidos_isencao')->name('concurso.pedidos_isencao');
+    Route::get('/{id}/relatorios', 'relatorios')->name('concurso.relatorios');
+    Route::get('/{id}/relatorios_novos', 'relatorios_novos')->name('concurso.relatorios_novos');
+    Route::get('/{id}/titulos', 'titulos')->name('concurso.titulos');
+    Route::get('/{id}/usuarios', 'usuarios')->name('concurso.usuarios');
+    Route::get('/{id}/necessidade_prova', 'necessidade_prova')->name('concurso.necessidade_prova');
+    Route::get('/{id}/indigenas', 'indigenas')->name('concurso.indigenas');
+    Route::get('/{id}/correcao', 'correcao')->name('concurso.correcao');
 });
 
 Route::controller(CandidatoController::class)->prefix('candidato')->group(function () {
