@@ -5,6 +5,15 @@
         <h1>Publicações</h1>
         
     </div><!-- End Page Title -->
+
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
     <section class="section dashboard">
         <div class="row">
             <div class="card">
@@ -13,86 +22,71 @@
                     <div class="mb-3">
                         <ul class="nav nav-tabs">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Concurso</a>
+                          <a class="nav-link active" aria-current="page" href="{{ route('concurso.consultar',['id' => $id]) }}">Concurso</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('concurso.avaliacao',['id' => 'Kuenda']) }}">Locais, Data de Avaliação</a>
+                          <a class="nav-link" href="{{ route('concurso.avaliacao',['id' => $id]) }}">Locais, Data de Avaliação</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('concurso.publicacao',['id' => 'Kuenda']) }}">Publicações</a>
+                          <a class="nav-link" href="{{ route('concurso.publicacao',['id' => $id]) }}">Publicações</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.boletos',['id' => 'Kuenda']) }}">Boletos</a>                              
+                            <a class="nav-link" href="{{ route('concurso.boletos',['id' => $id]) }}">Boletos</a>                              
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('concurso.cargos',['id' => 'Kuenda']) }}">Cargos</a>
+                          <a class="nav-link" href="{{ route('concurso.cargos',['id' => $id]) }}">Cargos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.recursos',['id' => 'Kuenda']) }}">Cadastro de Recursos</a>                              
+                            <a class="nav-link" href="{{ route('concurso.recursos',['id' => $id]) }}">Cadastro de Recursos</a>                              
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('concurso.retornos',['id' => 'Kuenda']) }}">Retornos</a>
+                          <a class="nav-link" href="{{ route('concurso.retornos',['id' => $id]) }}">Retornos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.inscricao',['id' => 'Kuenda']) }}">Inscrição/D. Pessoais</a>                              
+                            <a class="nav-link" href="{{ route('concurso.inscricao',['id' => $id]) }}">Inscrição/D. Pessoais</a>                              
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Correção</a>
+                          <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Correção</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Recursos</a>                              
+                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Recursos</a>                              
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Perguntas adicionais</a>
+                          <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Perguntas adicionais</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.afrodescendencia',['id' => 'Kuenda']) }}">Afrodescendente</a>                              
+                            <a class="nav-link" href="{{ route('concurso.afrodescendencia',['id' => $id]) }}">Afrodescendente</a>                              
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.pcd',['id' => 'Kuenda']) }}">PCD</a>                              
+                            <a class="nav-link" href="{{ route('concurso.pcd',['id' => $id]) }}">PCD</a>                              
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Necessidade Prova</a>                              
+                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Necessidade Prova</a>                              
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Indígena</a>                              
+                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Indígena</a>                              
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Cota adicional</a>                              
+                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Cota adicional</a>                              
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Pedidos de isenção</a>                              
+                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Pedidos de isenção</a>                              
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => 'Kuenda']) }}">Relatórios</a>                              
+                            <a class="nav-link" href="{{ route('concurso.consultar',['id' => $id]) }}">Relatórios</a>                              
                         </li>
                       </ul>
                     </div>
                     
                     <div class="my-4">
-                        <input type="button" value="Cadastrar Novo Edital" name="" id="" class="form-control btn-danger">
+                        <input type="button" value="Cadastrar Novo Edital" data-toggle="modal" data-target="#editModal" name="" id="" class="form-control btn-danger">
                     </div>
 
                     <div class="my-4 d-flex justify-content-between align-items-center">
                         <div class="d-flex flex-wrap">
-                           
-                            <div class="me-2 flex-grow-1">
-                                <div class="d-flex align-items-baseline">
-                                    <label class="me-2" for="">Mostrar </label>
-                                    <select class="form-select me-2" aria-label="Mostrar registros">
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="30">30</option>
-                                    </select>
-                                    <label for="">registos </label>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="me-2">
                             <div class="d-flex align-items-center justify-center">
-                                <label for="" class="form-label"></label>
-                                <input type="search" class="form-control" placeholder="Search">
                             </div>
                         </div>
                     </div>
@@ -109,18 +103,114 @@
                             </tr>
                         </thead>	
                         <tbody>
-                            <tr>
-                                <td>Diário Oficial - Contratação da organizadora</td>
-                                <td>Portal Nacional de Contratações Públicas.pdf</td>
-                                <td>212.86Kb</td>
-                                <td><input type="button" value="Alterar" name="" id="" class="form-control btn-danger"></td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger"></td>
-                            </tr>
+                           @foreach ($publicacao as $item)
+                                <tr>
+                                    <td>{{ $item->descricao }}</td>
+                                    <td>
+                                        <a href="{{ Storage::url($item->path) }}" target="_blank">{{ basename($item->path) }}</a>
+                                    </td>
+                                    <td>{{ $item->path ? Storage::size($item->path) / 1024 . ' KB' : 'N/A' }}</td>
+                                    <td>
+                                        <a href="{{ Storage::url($item->path) }}" class="btn btn-primary" target="_blank">Visualizar</a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('publicacao.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     <!-- End Table with hoverable rows -->
 
                 </div>
+
+
+            <!-- Modal -->
+ <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Adicionar/Edital</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm" method="POST" action="{{ route('publicacao.store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <input type="hidden" class="form-control" value="{{$id}}" name="concurso_id" id="concurso_id" required>
+                                <label for="tipo_edital" class="form-label">Tipo de Edital</label>
+                                <input type="text" class="form-control" name="tipo_edital" id="tipo_edital" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <textarea class="form-control" name="descricao" id="descricao" rows="3" required></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="situacao" class="form-label">Situação</label>
+                                <select class="form-control" name="situacao" id="situacao" required>
+                                    <option value="1">Ativo</option>
+                                    <option value="0">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="codigo_ato" class="form-label">Código do Ato</label>
+                                <input type="text" class="form-control" name="codigo_ato" id="codigo_ato" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="path" class="form-label"> Arquivo</label>
+                                <input type="file" class="form-control" name="path" id="path" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="tipo_publicacao" class="form-label">Tipo de Publicação</label>
+                                <select name="tipo_publicacao" class="form-control" required>
+                                    <option>Edital</option>
+                                    <option>Prova</option>
+                                    <option>Localize sala</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="data_visualizacao" class="form-label">Data de Visualização</label>
+                                <input type="date" class="form-control" name="data_visualizacao" id="data_visualizacao" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="hora_visualizacao" class="form-label">Hora de Visualização</label>
+                                <input type="time" class="form-control" name="hora_visualizacao" id="hora_visualizacao" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="data_publicacao" class="form-label">Data de Publicação</label>
+                                <input type="date" class="form-control" name="data_publicacao" id="data_publicacao" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="visivel_ate" class="form-label">Visível Até</label>
+                                <input type="date" class="form-control" name="visivel_ate" id="visivel_ate" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
             </div>
 
 

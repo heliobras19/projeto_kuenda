@@ -43,7 +43,7 @@
                                 <td>{{$item->modalidade}}</td>
                                 <td>{{$item->edital_numero}}</td>
                                 <td>{{$item->data_inicio}} - {{$item->data_fim}}</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn btn-danger"></td>
+                                <td><a value="Visualizar" href="{{route('concurso.consultar', ['id' => $item->id])}}" name="" id="" class="form-control btn btn-danger">visualizar </a></td>
                             
                             </tr>
                         @endforeach 

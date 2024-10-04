@@ -3,12 +3,15 @@
 use App\Http\Controllers\BancaController;
 use App\Http\Controllers\BoletosController;
 use App\Http\Controllers\CandidatoController;
+use App\Http\Controllers\CidadeAvaliacaoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ConcursoController;
 use App\Http\Controllers\FinanceiroController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PublicacaoController;
 use App\Http\Controllers\TipoRecursoController;
 use App\Http\Controllers\TipoTituloController;
+use App\Http\Controllers\TurnoAvaliacaoController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\TipoRecurso;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +53,14 @@ Route::controller(ClienteController::class)->prefix('cliente')->group(function (
     Route::post('/novo_save', 'store')->name('clientes.store');
 });
 
+Route::post('/turno-avaliacao', [TurnoAvaliacaoController::class, 'store'])->name('turno-avaliacao.store');
+Route::delete('/turno-avaliacao/{id}', [TurnoAvaliacaoController::class, 'destroy'])->name('turno-avaliacao.destroy');
+
+Route::post('/cidade-avaliacao', [CidadeAvaliacaoController::class, 'store'])->name('cidades.store');
+Route::delete('/cidade-destroy/{id}', [CidadeAvaliacaoController::class, 'destroy'])->name('cidades.destroy');
+
+Route::post('publicacao', [PublicacaoController::class, 'store'])->name('publicacao.store');
+Route::delete('/publicacao/{id}', [PublicacaoController::class, 'destroy'])->name('publicacao.destroy');
 Route::controller(ConcursoController::class)->prefix('concurso')->group(function () {
     Route::get('/', 'index')->name('concurso'); // Exibe o formulário de login.
     Route::get('/novo', 'novo')->name('concurso.novo'); // Processa o login.

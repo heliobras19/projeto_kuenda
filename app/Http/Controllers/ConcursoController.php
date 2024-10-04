@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CidadeAvaliacao;
 use App\Models\Cliente;
 use App\Models\Concurso;
+use App\Models\Publicacao;
+use App\Models\TurnoAvaliacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -36,22 +39,26 @@ class ConcursoController extends Controller
         return view('concurso.novo', compact('clientes'));
     }
 
-    public function consultar()
+    public function consultar($id)
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.concurso',  compact('clientes'));
+        $concurso = Concurso::find($id);
+        return view('concurso.menus.concurso',  compact('clientes', 'id', 'concurso'));
     }
 
-    public function avaliacao()
+    public function avaliacao($id)
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.avaliacao',  compact('clientes'));
+        $turno = TurnoAvaliacao::where('concurso_id', $id)->get();
+        $cidade = CidadeAvaliacao::where('concurso_id', $id)->get();
+        return view('concurso.menus.avaliacao',  compact('clientes', 'id', 'turno', 'cidade'));
     }
 
-    public function publicacao()
+    public function publicacao($id)
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.publicacao',  compact('clientes'));
+        $publicacao = Publicacao::where('concurso_id', $id)->get();
+        return view('concurso.menus.publicacao',  compact('clientes', 'id', 'publicacao'));
     }
 
     public function boletos()
@@ -61,10 +68,10 @@ class ConcursoController extends Controller
     }
 
 
-    public function cargos()
+    public function cargos($id)
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.cargos',  compact('clientes'));
+        return view('concurso.menus.cargos',  compact('clientes', 'id'));
     }
 
     public function recursos()
@@ -176,6 +183,58 @@ class ConcursoController extends Controller
     
     }
 
+        public function update(Request $request, $id)
+    {
+        //return $request->all();
+       try {
+        $validatedData = $request->validate([
+            'entidade' => 'required|string|max:255',
+            'municipio' => 'required|string|max:255',
+            'estado' => 'required|string|max:255',
+            'descricao' => 'required|string',
+            'edital_numero' => 'required|string|max:255',
+            'modalidade' => 'required|string|max:255',
+            'status' => 'required|string|max:255',
+            'situacao' => 'required|string|max:255',
+            'descricao_inicial' => 'required|string',
+            'descricao_publicacoes' => 'required|string',
+            'tipo_inscricao' => 'required|string|max:255',
+            'codigo_certame' => 'required|string|max:255',
+            'data_inicio' => 'required|date',
+            'hora_inicio' => 'required',
+            'data_fim' => 'required|date',
+            'hora_fim' => 'required',
+            'data_pror' => 'nullable|date',
+            'hora_pror' => 'nullable',
+            'numero_inscricoes' => 'required|string|max:255',
+            'numero_inscricoes_turno' => 'required|string|max:255',
+            'data_limite_estatuto_idoso' => 'nullable|date',
+            'vagas_negros_pardos' => 'required|boolean',
+            'informar_dependentes' => 'required|boolean',
+            'quantidade_tipo_prova' => 'required|integer',
+            'data_final_isencao' => 'nullable|date',
+            'hora_final_isencao' => 'nullable',
+            'numero_isencoes' => 'required|integer',
+            'permite_anexo_documentos' => 'required|boolean',
+            'data_final_anexo' => 'nullable|date',
+            'hora_final_anexo' => 'nullable',
+            'permite_anexo_documentos_pcd' => 'required|boolean',
+        ]);
+        
+        $validatedData['codigo_concurso'] = Str::uuid();
+        //return $validatedData;
+        $concurso = Concurso::find($id);
+
+        $concurso->update($validatedData);
+
+        return redirect()->route('concurso')->with('success', 'Concurso criado com sucesso!');
+    
+       } catch (\Throwable $th) {
+        dd($th->getMessage());
+       } 
+    
+    }
+
     /**
      * Display the specified resource.
      */
@@ -195,10 +254,6 @@ class ConcursoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Concurso $concurso)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

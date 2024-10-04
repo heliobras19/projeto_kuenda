@@ -47,4 +47,16 @@ class Concurso extends Model
     public function Cliente () {
         return $this->belongsTo(Cliente::class, 'entidade');
     }
+
+    public function turno () {
+        return $this->belongsTo(TurnoAvaliacao::class, 'concurso_id');
+    }
+
+    public function cidade() {
+        return $this->belongsTo(CidadeAvaliacao::class, 'concurso_id');
+    }
+
+    function publicacoes()  {
+        return $this->belongsTo(Publicacao::class, 'concurso_id');
+    }
 }
