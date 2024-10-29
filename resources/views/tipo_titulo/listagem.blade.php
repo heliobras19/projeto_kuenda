@@ -53,6 +53,8 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+                                <form action="{{route('tipo_titulo.store')}}" method="POST">
+                                @csrf
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="input1">Código:</label>
@@ -60,14 +62,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="input2">Tipo de Título</label>
-                                        <input type="text" class="form-control" id="input2">
+                                        <input type="text" name="tipo_titulo" class="form-control" id="input2">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-primary">Salvar</button>
+                                    <input type="submit" class="btn btn-primary">Salvar</button>
                                     
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -84,11 +87,13 @@
                         </thead>		
                         
                         <tbody>
-                            <tr>
-                                <th scope="row">32</th>
-                                <td>RESULTADO PRELIMINAR DOS CARGOS SEM SEGUNDA FASE.</td>
-                                <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger" data-toggle="modal" data-target="#myModal"></td>
-                            </tr>
+                           @foreach ($tipo as $key => $item)
+                                <tr>
+                                    <th scope="row">{{$key+1}}</th>
+                                    <td>{{$item->tipo_titulo}}</td>
+                                    <td><input type="button" value="Visualizar" name="" id="" class="form-control btn-danger" data-toggle="modal" data-target="#myModal"></td>
+                                </tr>
+                            @endforeach
          
                             
                         </tbody>

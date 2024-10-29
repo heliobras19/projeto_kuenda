@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('bancas', function (Blueprint $table) {
             $table->id();
+            $table->string('cpf');
+            $table->string('situacao');
+            $table->string('nome_completo');
+            $table->string('telefone');
+            $table->string('email');
+            $table->string('senha');
             $table->timestamps();
         });
     }

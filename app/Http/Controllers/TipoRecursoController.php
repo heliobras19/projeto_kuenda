@@ -12,7 +12,8 @@ class TipoRecursoController extends Controller
      */
     public function index()
     {
-        return view('tipo_recurso.listagem');
+        $tipo = TipoRecurso::all();
+        return view('tipo_recurso.listagem', compact('tipo'));
     }
 
     public function novo()
@@ -33,7 +34,8 @@ class TipoRecursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        TipoRecurso::create($request->all());
+        return redirect()->route('tipo_recurso');
     }
 
     /**

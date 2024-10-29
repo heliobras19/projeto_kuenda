@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="pagetitle">
-        <h1>Concurso</h1>
+        <h1>Concursos</h1>
     </div><!-- End Page Title -->
 
     <section class="section profile">
@@ -12,7 +12,7 @@
 
                 <div class="card">
                     <div class="card-body pt-3">
-                        <form action="{{ route('concurso.update') }}" method="POST">
+                        <form action="{{ route('concurso.update', ['id' => $id]) }}" method="POST">
                             @csrf
 
                             <div class="mb-3">

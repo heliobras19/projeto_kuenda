@@ -12,7 +12,8 @@ class TipoTituloController extends Controller
      */
     public function index()
     {
-        return view('tipo_titulo.listagem');
+        $tipo = TipoTitulo::all();
+        return view('tipo_titulo.listagem', compact('tipo'));
     }
 
     public function novo()
@@ -33,7 +34,8 @@ class TipoTituloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        TipoTitulo::create($request->all());
+        return redirect()->route('tipo_titulo');
     }
 
     /**

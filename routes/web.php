@@ -3,6 +3,7 @@
 use App\Http\Controllers\BancaController;
 use App\Http\Controllers\BoletosController;
 use App\Http\Controllers\CandidatoController;
+use App\Http\Controllers\CargoController;
 use App\Http\Controllers\CidadeAvaliacaoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ConcursoController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\TipoTituloController;
 use App\Http\Controllers\TurnoAvaliacaoController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\TipoRecurso;
+use App\Services\BoletoService;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,7 +23,8 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-    return view('welcome');
+    $boleto = new BoletoService();
+    return $boleto->gerarBoleto();
 });
 
 Auth::routes();
@@ -29,6 +32,9 @@ Auth::routes();
 Route::get('/formacao', function () {
     return view('formacao');
 });
+
+Route::get('/cargos/create', [CargoController::class, 'show'])->name('cargos.show');
+Route::post('/cargos/store', [CargoController::class, 'store'])->name('cargos.store');
 
 Route::get('/sobre', function () {
     return view('sobre');
@@ -65,6 +71,7 @@ Route::controller(ConcursoController::class)->prefix('concurso')->group(function
     Route::get('/', 'index')->name('concurso'); // Exibe o formulário de login.
     Route::get('/novo', 'novo')->name('concurso.novo'); // Processa o login.
     Route::post('/novo_save', 'store')->name('concurso.store'); // Processa o login.
+    Route::post('/novo_save_update/{id}', 'update')->name('concurso.update'); // Processa o login.
     Route::get('/andamento', 'andamento')->name('concurso.andamento'); //->middleware('check.concurso'); // Exibe a página inicial do concurso.
     Route::get('/todos', 'todos')->name('concurso.todos');//->middleware('check.concurso'); // Exibe a página inicial do concurso.
     Route::get('/editar', 'editar')->name('concurso.editar');//->middleware('check.concurso');
@@ -122,11 +129,13 @@ Route::controller(FinanceiroController::class)->prefix('financeiro')->group(func
 Route::controller(TipoRecursoController::class)->prefix('tipo_recurso')->group(function () {
     Route::get('/', 'index')->name('tipo_recurso'); 
     Route::get('/novo', 'novo')->name('tipo_recurso.novo'); 
+    Route::post('/recurso_store', 'store')->name('tipo_recurso.store');
 });
 
 Route::controller(TipoTituloController::class)->prefix('tipo_titulo')->group(function () {
     Route::get('/', 'index')->name('tipo_titulo'); 
     Route::get('/novo', 'novo')->name('tipo_titulo.novo'); 
+    Route::post('/recurso_store', 'store')->name('tipo_titulo.store');
 });
 
 Route::controller(UsuarioController::class)->prefix('usuario')->group(function () {

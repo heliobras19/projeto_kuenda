@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cargo;
 use App\Models\CidadeAvaliacao;
 use App\Models\Cliente;
 use App\Models\Concurso;
@@ -70,14 +71,14 @@ class ConcursoController extends Controller
 
     public function cargos($id)
     {
-        $clientes = Cliente::all();
-        return view('concurso.menus.cargos',  compact('clientes', 'id'));
+        $cargos = Cargo::all();
+        return view('concurso.menus.cargos',  compact('cargos', 'id'));
     }
 
-    public function recursos()
+    public function recursos($id)
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.recursos',  compact('clientes'));
+        return view('concurso.menus.recursos',  compact('clientes', 'id'));
     }
 
     public function cadastro_recursos()
@@ -281,7 +282,7 @@ class ConcursoController extends Controller
 
         $concurso->update($validatedData);
 
-        return redirect()->route('concurso')->with('success', 'Concurso criado com sucesso!');
+        return redirect()->back()->with('success', 'Concurso criado com sucesso!');
     
        } catch (\Throwable $th) {
         dd($th->getMessage());
