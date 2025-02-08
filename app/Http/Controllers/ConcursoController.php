@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cargo;
+use App\Models\CargoInscricao;
 use App\Models\CidadeAvaliacao;
 use App\Models\Cliente;
 use App\Models\Concurso;
@@ -71,8 +72,9 @@ class ConcursoController extends Controller
 
     public function cargos($id)
     {
-        $cargos = Cargo::all();
-        return view('concurso.menus.cargos',  compact('cargos', 'id'));
+        $cargos = CargoInscricao::where('concurso_id', $id)->get();
+         $horarios = TurnoAvaliacao::where('concurso_id', $id)->get();
+        return view('concurso.menus.cargos',  compact('cargos', 'id', 'horarios'));
     }
 
     public function recursos($id)
@@ -93,10 +95,10 @@ class ConcursoController extends Controller
         return view('concurso.menus.retornos',  compact('clientes'));
     }
 
-    public function inscricao()
+    public function inscricao($id)
     {
         $clientes = Cliente::all();
-        return view('concurso.menus.inscricao',  compact('clientes'));
+        return view('concurso.menus.inscricao',  compact('clientes', 'id'));
     }
 
     public function correcao()

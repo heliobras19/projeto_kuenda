@@ -4,6 +4,7 @@ use App\Http\Controllers\BancaController;
 use App\Http\Controllers\BoletosController;
 use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\CargoController;
+use App\Http\Controllers\CargoInscricaoController;
 use App\Http\Controllers\CidadeAvaliacaoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ConcursoController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\TipoTituloController;
 use App\Http\Controllers\TurnoAvaliacaoController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\TipoRecurso;
+use App\Services\BoletoData;
 use App\Services\BoletoService;
 use Illuminate\Support\Facades\Route;
 
@@ -23,8 +25,8 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-    $boleto = new BoletoService();
-    return $boleto->gerarBoleto();
+    $boleto = new BoletoData();
+    return $boleto->data(1, "helio", "heliobras3@hotmail.com", "123.3243-232/23", "11", "936500717", "150");
 });
 
 Auth::routes();
@@ -58,6 +60,9 @@ Route::controller(ClienteController::class)->prefix('cliente')->group(function (
     Route::get('/novo', 'novo')->name('cliente.novo'); // Processa o login.
     Route::post('/novo_save', 'store')->name('clientes.store');
 });
+
+Route::post('cargo', [CargoInscricaoController::class, 'store'])->name('cargo_inscricao.store');
+Route::delete('/cargo/{id}', [CargoInscricaoController::class, 'destroy'])->name('cargo_inscricao.delete');
 
 Route::post('/turno-avaliacao', [TurnoAvaliacaoController::class, 'store'])->name('turno-avaliacao.store');
 Route::delete('/turno-avaliacao/{id}', [TurnoAvaliacaoController::class, 'destroy'])->name('turno-avaliacao.destroy');
