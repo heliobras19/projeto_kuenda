@@ -11,6 +11,7 @@ use App\Http\Controllers\ConcursoController;
 use App\Http\Controllers\FinanceiroController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicacaoController;
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\TipoRecursoController;
 use App\Http\Controllers\TipoTituloController;
 use App\Http\Controllers\TurnoAvaliacaoController;
@@ -47,10 +48,9 @@ Route::get('/desenvolvimento', function () {
 });
 
 
-Route::get('/concursos', function () {
-    return view('concursos');
-});
-
+Route::get('/concorrer', [SiteController::class, 'concurso']);
+Route::get('concorrer/{id}', [SiteController::class, 'saiba_mais'])->name('concurso_info');
+Route::get('inscrever/{id}', [SiteController::class, 'candidatar_sepers'])->name('candidatar_sepone');
 Route::get('/dashboard', function () {
     return view('candidato.home');
 });

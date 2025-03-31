@@ -49,14 +49,18 @@ class Concurso extends Model
     }
 
     public function turno () {
-        return $this->belongsTo(TurnoAvaliacao::class, 'concurso_id');
+        return $this->hasMany(TurnoAvaliacao::class, 'concurso_id');
     }
 
     public function cidade() {
-        return $this->belongsTo(CidadeAvaliacao::class, 'concurso_id');
+        return $this->hasMany(CidadeAvaliacao::class, 'concurso_id');
     }
 
     function publicacoes()  {
-        return $this->belongsTo(Publicacao::class, 'concurso_id');
+        return $this->hasMany(Publicacao::class, 'concurso_id');
+    }
+
+    public function cargos() {
+        return $this->hasMany(CargoInscricao::class, 'concurso_id');
     }
 }

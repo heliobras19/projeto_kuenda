@@ -18,5 +18,9 @@ class CargoInscricao extends Model
     'limite_inscritos',
     'turno_avaliacaos_id',
     'concurso_id',
-];
+    ];
+
+    public function concurso () {
+        return $this->belongsTo(Concurso::class, 'concurso_id');
+    }
 }

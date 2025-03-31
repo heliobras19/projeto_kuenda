@@ -18,7 +18,7 @@
 
                     <div class="collapse navbar-collapse navbar-morki">
                         <ul class="nav navbar-nav navbar-left" id="nav-menu">
-                            <li><a href="{{ url('concursos') }}" data-scroll="">Concursos</a></li>
+                            <li><a href="{{ url('concorrer') }}" data-scroll="">Concursos</a></li>
                             <li><a href="{{ url('formacao') }}">Formação</a></li>
                             <li><a href="https://api.whatsapp.com/send?phone=5581997690218"><i class="fa fa-phone-alt"
                                         style="font-size: 19px;"></i><span>(81)
